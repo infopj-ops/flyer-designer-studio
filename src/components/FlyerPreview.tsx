@@ -1,5 +1,5 @@
 import type { FlyerData } from "@/types/flyer";
-import logoImg from "@/assets/servic_template.png";
+import logoImg from "@/assets/logo.png";
 
 interface FlyerPreviewProps {
   data: FlyerData;
