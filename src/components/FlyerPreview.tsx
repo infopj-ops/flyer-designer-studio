@@ -47,17 +47,10 @@ const FlyerPreview = ({ data }: FlyerPreviewProps) => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full px-8 py-12 text-center">
-        {/* Logo placeholder */}
-        <div className="mb-1">
-          <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center mx-auto">
-            <svg viewBox="0 0 24 24" className="w-7 h-7 text-primary-foreground" fill="currentColor">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm-4.5 7.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5zm3 4c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5zm4.5-4c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5z" />
-            </svg>
-          </div>
-          <p className="text-primary font-bold text-lg italic mt-1" style={{ fontFamily: "'Georgia', serif" }}>
-            parque jazmín
-          </p>
+      <div className="relative z-10 flex flex-col items-center justify-center h-full px-8 py-12 text-center" style={{ fontFamily: "'DIN Next LT Pro', sans-serif" }}>
+        {/* Logo */}
+        <div className="mb-2">
+          <img src={logoImg} alt="Parque Jazmín" className="h-20 mx-auto" />
         </div>
 
         <p className="text-sm text-foreground/80 mb-1">
