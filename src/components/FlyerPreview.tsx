@@ -31,10 +31,10 @@ const FlyerPreview = ({ data }: FlyerPreviewProps) => {
     <div className="w-full max-w-[480px] mx-auto aspect-square relative overflow-hidden rounded-lg shadow-lg bg-flyer-bg">
       
       {/* Cloud shapes top */}
-      <div className="absolute top-0 left-0 right-0 h-24">
-        <svg viewBox="0 0 480 96" className="w-full h-full" preserveAspectRatio="none">
-          <path d="M0,40 Q60,10 120,35 Q180,5 240,30 Q300,0 360,25 Q420,5 480,30 L480,0 L0,0 Z" fill="hsl(195, 70%, 82%)" />
-          <path d="M0,60 Q80,30 160,50 Q240,20 320,45 Q400,25 480,50 L480,0 L0,0 Z" fill="hsl(195, 75%, 87%)" opacity="0.7" />
+      <div className="absolute top-0 left-0 right-0 h-16">
+        <svg viewBox="0 0 480 64" className="w-full h-full" preserveAspectRatio="none">
+          <path d="M0,30 Q60,8 120,25 Q180,3 240,20 Q300,0 360,18 Q420,3 480,22 L480,0 L0,0 Z" fill="hsl(195, 70%, 82%)" />
+          <path d="M0,45 Q80,20 160,38 Q240,12 320,32 Q400,18 480,38 L480,0 L0,0 Z" fill="hsl(195, 75%, 87%)" opacity="0.7" />
         </svg>
       </div>
 
