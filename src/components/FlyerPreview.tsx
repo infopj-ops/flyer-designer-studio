@@ -28,9 +28,7 @@ const FlyerPreview = ({ data }: FlyerPreviewProps) => {
   const horaCeremonia = formatTime(data.horaCeremonia);
 
   return (
-    <div className="w-full max-w-[480px] mx-auto aspect-square relative overflow-hidden rounded-lg shadow-lg">
-      {/* Cloud background */}
-      <div className="absolute inset-0 bg-flyer-cloud" />
+    <div className="w-full max-w-[480px] mx-auto aspect-square relative overflow-hidden rounded-lg shadow-lg bg-flyer-bg">
       
       {/* Cloud shapes top */}
       <div className="absolute top-0 left-0 right-0 h-24">
