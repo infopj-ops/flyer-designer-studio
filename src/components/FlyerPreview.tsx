@@ -39,10 +39,10 @@ const FlyerPreview = ({ data }: FlyerPreviewProps) => {
       </div>
 
       {/* Cloud shapes bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-24">
-        <svg viewBox="0 0 480 96" className="w-full h-full" preserveAspectRatio="none">
-          <path d="M0,56 Q60,86 120,61 Q180,91 240,66 Q300,96 360,71 Q420,91 480,66 L480,96 L0,96 Z" fill="hsl(195, 70%, 82%)" />
-          <path d="M0,36 Q80,66 160,46 Q240,76 320,51 Q400,71 480,46 L480,96 L0,96 Z" fill="hsl(195, 75%, 87%)" opacity="0.7" />
+      <div className="absolute bottom-0 left-0 right-0 h-16">
+        <svg viewBox="0 0 480 64" className="w-full h-full" preserveAspectRatio="none">
+          <path d="M0,34 Q60,54 120,39 Q180,59 240,44 Q300,64 360,49 Q420,59 480,44 L480,64 L0,64 Z" fill="hsl(195, 70%, 82%)" />
+          <path d="M0,20 Q80,44 160,30 Q240,50 320,35 Q400,48 480,30 L480,64 L0,64 Z" fill="hsl(195, 75%, 87%)" opacity="0.7" />
         </svg>
       </div>
 
