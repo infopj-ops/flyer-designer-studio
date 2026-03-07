@@ -1,5 +1,5 @@
 import type { FlyerData } from "@/types/flyer";
-import logoImg from "@/assets/servic_template.png";
+import logoImg from "@/assets/logo.png";
 
 interface FlyerPreviewProps {
   data: FlyerData;
@@ -31,33 +31,26 @@ const FlyerPreview = ({ data }: FlyerPreviewProps) => {
     <div className="w-full max-w-[480px] mx-auto aspect-square relative overflow-hidden rounded-lg shadow-lg bg-flyer-bg">
       
       {/* Cloud shapes top */}
-      <div className="absolute top-0 left-0 right-0 h-24">
-        <svg viewBox="0 0 480 96" className="w-full h-full" preserveAspectRatio="none">
-          <path d="M0,40 Q60,10 120,35 Q180,5 240,30 Q300,0 360,25 Q420,5 480,30 L480,0 L0,0 Z" fill="hsl(195, 70%, 82%)" />
-          <path d="M0,60 Q80,30 160,50 Q240,20 320,45 Q400,25 480,50 L480,0 L0,0 Z" fill="hsl(195, 75%, 87%)" opacity="0.7" />
+      <div className="absolute top-0 left-0 right-0 h-16">
+        <svg viewBox="0 0 480 64" className="w-full h-full" preserveAspectRatio="none">
+          <path d="M0,30 Q60,8 120,25 Q180,3 240,20 Q300,0 360,18 Q420,3 480,22 L480,0 L0,0 Z" fill="hsl(195, 70%, 82%)" />
+          <path d="M0,45 Q80,20 160,38 Q240,12 320,32 Q400,18 480,38 L480,0 L0,0 Z" fill="hsl(195, 75%, 87%)" opacity="0.7" />
         </svg>
       </div>
 
       {/* Cloud shapes bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-24">
-        <svg viewBox="0 0 480 96" className="w-full h-full" preserveAspectRatio="none">
-          <path d="M0,56 Q60,86 120,61 Q180,91 240,66 Q300,96 360,71 Q420,91 480,66 L480,96 L0,96 Z" fill="hsl(195, 70%, 82%)" />
-          <path d="M0,36 Q80,66 160,46 Q240,76 320,51 Q400,71 480,46 L480,96 L0,96 Z" fill="hsl(195, 75%, 87%)" opacity="0.7" />
+      <div className="absolute bottom-0 left-0 right-0 h-16">
+        <svg viewBox="0 0 480 64" className="w-full h-full" preserveAspectRatio="none">
+          <path d="M0,34 Q60,54 120,39 Q180,59 240,44 Q300,64 360,49 Q420,59 480,44 L480,64 L0,64 Z" fill="hsl(195, 70%, 82%)" />
+          <path d="M0,20 Q80,44 160,30 Q240,50 320,35 Q400,48 480,30 L480,64 L0,64 Z" fill="hsl(195, 75%, 87%)" opacity="0.7" />
         </svg>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full px-8 py-12 text-center">
-        {/* Logo placeholder */}
-        <div className="mb-1">
-          <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center mx-auto">
-            <svg viewBox="0 0 24 24" className="w-7 h-7 text-primary-foreground" fill="currentColor">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm-4.5 7.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5zm3 4c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5zm4.5-4c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5z" />
-            </svg>
-          </div>
-          <p className="text-primary font-bold text-lg italic mt-1" style={{ fontFamily: "'Georgia', serif" }}>
-            parque jazmín
-          </p>
+      <div className="relative z-10 flex flex-col items-center justify-center h-full px-8 py-12 text-center" style={{ fontFamily: "'DIN Next LT Pro', sans-serif" }}>
+        {/* Logo */}
+        <div className="mb-2">
+          <img src={logoImg} alt="Parque Jazmín" className="h-20 mx-auto" />
         </div>
 
         <p className="text-sm text-foreground/80 mb-1">
