@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import type { FlyerData } from "@/types/flyer";
 import logoImg from "@/assets/logo.png";
 
@@ -16,7 +17,7 @@ const formatTime = (timeStr: string): string => {
   return timeStr;
 };
 
-const FlyerPreview = ({ data }: FlyerPreviewProps) => {
+const FlyerPreview = forwardRef<HTMLDivElement, FlyerPreviewProps>(({ data }, ref) => {
   const nombre = data.nombre || "[Nombre Completo]";
   const fechaNac = formatDate(data.fechaNacimiento);
   const fechaFall = formatDate(data.fechaFallecimiento);
@@ -28,7 +29,7 @@ const FlyerPreview = ({ data }: FlyerPreviewProps) => {
   const horaCeremonia = formatTime(data.horaCeremonia);
 
   return (
-    <div className="w-full max-w-[480px] mx-auto aspect-square relative overflow-hidden rounded-lg shadow-lg bg-flyer-bg">
+    <div ref={ref} className="w-full max-w-[480px] mx-auto aspect-square relative overflow-hidden rounded-lg shadow-lg bg-flyer-bg">
       
       {/* Cloud shapes top */}
       <div className="absolute top-0 left-0 right-0 h-16">
@@ -89,6 +90,8 @@ const FlyerPreview = ({ data }: FlyerPreviewProps) => {
       </div>
     </div>
   );
-};
+});
+
+FlyerPreview.displayName = "FlyerPreview";
 
 export default FlyerPreview;
