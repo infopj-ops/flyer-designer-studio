@@ -74,7 +74,7 @@ const FlyerPreview = forwardRef<HTMLDivElement, FlyerPreviewProps>(({ data }, re
           {nombre}
         </h2>
 
-        <div className="w-48 border-t border-flyer-border mx-auto mb-1" />
+        
 
         <p className="text-sm font-bold text-foreground mb-0">Q.E.P.D.</p>
         <p className="text-sm text-foreground/70 mb-1">

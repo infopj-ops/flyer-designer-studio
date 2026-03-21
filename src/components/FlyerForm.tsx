@@ -33,25 +33,14 @@ const FlyerForm = ({ data, onChange }: FlyerFormProps) => {
         />
       </div>
 
-      <div className="grid grid-cols-2 gap-3">
-        <div className="space-y-2">
-          <Label htmlFor="fechaNacimiento">Fecha de nacimiento</Label>
-          <Input
-            id="fechaNacimiento"
-            type="date"
-            value={data.fechaNacimiento}
-            onChange={(e) => update("fechaNacimiento", e.target.value)}
-          />
-        </div>
-        <div className="space-y-2">
-          <Label htmlFor="fechaFallecimiento">Fecha de fallecimiento</Label>
-          <Input
-            id="fechaFallecimiento"
-            type="date"
-            value={data.fechaFallecimiento}
-            onChange={(e) => update("fechaFallecimiento", e.target.value)}
-          />
-        </div>
+      <div className="space-y-2">
+        <Label htmlFor="fechaFallecimiento">Fecha de fallecimiento</Label>
+        <Input
+          id="fechaFallecimiento"
+          type="date"
+          value={data.fechaFallecimiento}
+          onChange={(e) => update("fechaFallecimiento", e.target.value)}
+        />
       </div>
 
       <div className="space-y-2">
