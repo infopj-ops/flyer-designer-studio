@@ -19,11 +19,23 @@ const Index = () => {
     setExporting(true);
     try {
       const el = flyerRef.current;
+      // Temporarily remove the CSS scale so html2canvas captures at full 1200x1200
+      const wrapper = el.parentElement;
+      const prevTransform = wrapper?.style.transform || "";
+      if (wrapper) {
+        wrapper.style.transform = "none";
+      }
       const canvas = await html2canvas(el, {
+        width: 1200,
+        height: 1200,
         scale: 1,
         useCORS: true,
         backgroundColor: "#ffffff",
       });
+      // Restore scale
+      if (wrapper) {
+        wrapper.style.transform = prevTransform;
+      }
       return canvas.toDataURL("image/png");
     } catch {
       toast.error("Error al generar la imagen");
