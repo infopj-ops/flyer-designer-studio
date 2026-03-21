@@ -6,15 +6,27 @@ interface FlyerPreviewProps {
   data: FlyerData;
 }
 
-const formatDate = (dateStr: string): string => {
-  if (!dateStr) return "___/___/______";
+const MONTHS = [
+  "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+  "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre",
+];
+
+const formatDateLong = (dateStr: string): string => {
+  if (!dateStr) return "__ de ______ de ____";
   const [y, m, d] = dateStr.split("-");
-  return `${d}/${m}/${y}`;
+  return `${d} de ${MONTHS[parseInt(m, 10) - 1]} de ${y}`;
 };
 
 const formatTime = (timeStr: string): string => {
   if (!timeStr) return "__:__";
   return timeStr;
+};
+
+const isToday = (dateStr: string): boolean => {
+  if (!dateStr) return false;
+  const today = new Date();
+  const [y, m, d] = dateStr.split("-").map(Number);
+  return today.getFullYear() === y && today.getMonth() + 1 === m && today.getDate() === d;
 };
 
 const FlyerPreview = forwardRef<HTMLDivElement, FlyerPreviewProps>(({ data }, ref) => {
