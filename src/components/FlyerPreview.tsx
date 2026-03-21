@@ -41,7 +41,7 @@ const FlyerPreview = forwardRef<HTMLDivElement, FlyerPreviewProps>(({ data }, re
   const velados = servicioHoy ? "Sus restos son velados" : "Sus restos serán velados";
 
   return (
-    <div ref={ref} className="w-full max-w-[480px] mx-auto aspect-square relative overflow-hidden rounded-lg shadow-lg bg-flyer-bg">
+    <div ref={ref} className="w-[1200px] h-[1200px] relative overflow-hidden bg-flyer-bg">
       
       {/* Cloud shapes top */}
       <div className="absolute top-0 left-0 right-0 h-16">

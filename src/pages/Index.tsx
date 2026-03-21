@@ -96,10 +96,12 @@ const Index = () => {
         </aside>
 
         {/* Preview */}
-        <main className="flex-1 flex items-start justify-center">
-          <div className="sticky top-6 w-full">
-            <p className="text-sm text-muted-foreground mb-3 text-center">Vista previa</p>
-            <FlyerPreview ref={flyerRef} data={data} />
+        <main className="flex-1 flex items-start justify-center overflow-hidden">
+          <div className="sticky top-6">
+            <p className="text-sm text-muted-foreground mb-3 text-center">Vista previa (1200×1200px)</p>
+            <div className="origin-top-left" style={{ width: 1200, height: 1200, transform: 'scale(0.4)', transformOrigin: 'top left' }}>
+              <FlyerPreview ref={flyerRef} data={data} />
+            </div>
           </div>
         </main>
       </div>
