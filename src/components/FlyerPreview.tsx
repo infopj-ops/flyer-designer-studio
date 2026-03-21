@@ -6,10 +6,15 @@ interface FlyerPreviewProps {
   data: FlyerData;
 }
 
-const formatDate = (dateStr: string): string => {
-  if (!dateStr) return "___/___/______";
+const MONTHS = [
+  "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+  "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre",
+];
+
+const formatDateLong = (dateStr: string): string => {
+  if (!dateStr) return "__ de ______ de ____";
   const [y, m, d] = dateStr.split("-");
-  return `${d}/${m}/${y}`;
+  return `${d} de ${MONTHS[parseInt(m, 10) - 1]} de ${y}`;
 };
 
 const formatTime = (timeStr: string): string => {
@@ -17,16 +22,23 @@ const formatTime = (timeStr: string): string => {
   return timeStr;
 };
 
+const isToday = (dateStr: string): boolean => {
+  if (!dateStr) return false;
+  const today = new Date();
+  const [y, m, d] = dateStr.split("-").map(Number);
+  return today.getFullYear() === y && today.getMonth() + 1 === m && today.getDate() === d;
+};
+
 const FlyerPreview = forwardRef<HTMLDivElement, FlyerPreviewProps>(({ data }, ref) => {
   const nombre = data.nombre || "[Nombre Completo]";
-  const fechaNac = formatDate(data.fechaNacimiento);
-  const fechaFall = formatDate(data.fechaFallecimiento);
+  const fechaFall = formatDateLong(data.fechaFallecimiento);
   const sala = data.salaVelatorio || "[sala]";
-  const fechaServ = formatDate(data.fechaServicio);
   const horaInicio = formatTime(data.horaInicioServicio);
   const horaFin = formatTime(data.horaFinServicio);
   const tipoCeremonia = data.tipoCeremonia || "[tipo ceremonia]";
   const horaCeremonia = formatTime(data.horaCeremonia);
+  const servicioHoy = isToday(data.fechaServicio);
+  const velados = servicioHoy ? "Sus restos son velados" : "Sus restos serán velados";
 
   return (
     <div ref={ref} className="w-full max-w-[480px] mx-auto aspect-square relative overflow-hidden rounded-lg shadow-lg bg-flyer-bg">
@@ -54,8 +66,8 @@ const FlyerPreview = forwardRef<HTMLDivElement, FlyerPreviewProps>(({ data }, re
           <img src={logoImg} alt="Parque Jazmín" className="h-20 mx-auto" />
         </div>
 
-        <p className="text-sm text-foreground/80 mb-1">
-          Con profundo respeto, comunicamos el fallecimiento de
+        <p className="text-xs text-foreground/70 mb-2 tracking-wide">
+          Participación de fallecimiento
         </p>
 
         <h2 className="text-2xl font-extrabold text-foreground mb-2 leading-tight">
@@ -64,8 +76,9 @@ const FlyerPreview = forwardRef<HTMLDivElement, FlyerPreviewProps>(({ data }, re
 
         <div className="w-48 border-t border-flyer-border mx-auto mb-1" />
 
+        <p className="text-sm font-bold text-foreground mb-0">Q.E.P.D.</p>
         <p className="text-sm text-foreground/70 mb-1">
-          ~ {fechaNac} - {fechaFall} ~
+          falleció el día {fechaFall}
         </p>
 
         <div className="w-48 border-t border-flyer-border mx-auto mb-3" />
@@ -76,7 +89,7 @@ const FlyerPreview = forwardRef<HTMLDivElement, FlyerPreviewProps>(({ data }, re
         </p>
 
         <p className="text-sm text-foreground/80 mb-4 leading-relaxed max-w-[320px]">
-          Sus restos serán velados en Sala {sala} de Parque Jazmín, el día {fechaServ}, de {horaInicio} a {horaFin} y la ceremonia de {tipoCeremonia} tendrá lugar a las {horaCeremonia}
+          {velados} en Sala {sala} de Parque Jazmín, de hs. {horaInicio} a hs. {horaFin} y la ceremonia de {tipoCeremonia} tendrá lugar a las hs. {horaCeremonia}
         </p>
 
         <div className="w-48 border-t border-flyer-border mx-auto mb-3" />
