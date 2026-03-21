@@ -19,9 +19,8 @@ const Index = () => {
     setExporting(true);
     try {
       const el = flyerRef.current;
-      const scale = 1200 / el.offsetWidth;
       const canvas = await html2canvas(el, {
-        scale,
+        scale: 1,
         useCORS: true,
         backgroundColor: "#ffffff",
       });
